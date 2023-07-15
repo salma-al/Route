@@ -1,0 +1,23 @@
+.QuoteBlock {
+  text-align: center;
+}
+
+.QuoteBlock h1 {
+  font-size: 5em;
+  font-family: 'Impact';
+}
+
+.QuoteBlock p {
+  font-size: 2em;
+}
+
+.QuoteBlock button {
+  padding: 2em 5em;
+  background: rgb(4, 70, 104);
+  color: #fff;
+  font-size: 1em;
+}
+
+.QuoteBlock button:hover {
+  background: #05a756;
+}
