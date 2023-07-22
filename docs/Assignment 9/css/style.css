@@ -1,0 +1,108 @@
+body {
+  background: linear-gradient(to right, #efefbb85, #d4d3dd94),
+    url('../img/14885.jpg');
+  background-position: center;
+  background-size: cover;
+  font-family: 'PT Sans Caption', sans-serif;
+}
+
+.three-circle div {
+  height: 15px;
+  width: 15px;
+  display: inline-block;
+}
+
+.bookmark-container {
+  background: #ffffffb2;
+  backdrop-filter: blur(3px);
+  padding: 2em;
+}
+
+.bookmarker-main-sec {
+  margin-block: 3.5em;
+}
+
+.heading-text {
+  padding-block: 1em 2em;
+}
+
+h1 {
+  font-family: 'Pacifico', cursive;
+  color: #023142;
+  font-size: 3em;
+  position: relative;
+  display: inline-block;
+  margin-bottom: 1em;
+}
+
+h1::before {
+  content: '';
+  position: absolute;
+  width: 100%;
+  height: 30%;
+  background-color: #d8ae3cb9;
+  bottom: 0;
+  left: 0;
+  z-index: -1;
+  transition: all 0.4s;
+}
+
+h1:hover::before {
+  height: 70%;
+}
+
+.gradient-text {
+  background-image: linear-gradient(to right, #cfa42e, #ff6a72);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  border-top: 1px #023142 dashed;
+  padding-top: 1em;
+}
+
+label {
+  font-weight: 700;
+}
+
+.inputs {
+  margin-bottom: 2em;
+}
+
+#addBtn {
+  padding-inline: 2em;
+  background-color: #c49924;
+  color: #fff;
+}
+
+#addBtn:hover {
+  background-color: #ac8826;
+}
+
+#addBtn:focus {
+  outline: none;
+  box-shadow: none;
+}
+
+.table-data-sec {
+  background: #ffffffb2;
+  backdrop-filter: blur(3px);
+  padding: 2em;
+  margin-bottom: 4em;
+}
+
+.table-data-sec tr .btn span,
+.bookmark-container .inputs span {
+  margin-right: 5px;
+}
+
+/* Modal */
+
+.modal .modal-title {
+  font-family: 'Bree Serif', serif;
+  margin-bottom: 1em;
+}
+
+.modal .modal-body span {
+  color: #dc3545;
+}
+/* End Modal */
