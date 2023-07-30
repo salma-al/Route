@@ -1,0 +1,42 @@
+body {
+  background-color: #24353f;
+  min-height: 100vh;
+}
+
+.outline-white {
+  border-color: #f8f9fa;
+  background-color: transparent;
+}
+
+.outline-white:focus {
+  background-color: transparent;
+  box-shadow: none;
+}
+
+main .login-card {
+  width: 70%;
+  padding: 2.5em;
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+}
+
+main .login-container {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+  height: 100vh;
+  flex-wrap: wrap;
+}
+
+.navbar-collapse {
+  justify-content: flex-end;
+}
+
+nav {
+  box-shadow: -5px 2px 54px -9px rgba(0, 0, 0, 1);
+}
+
+#loginBtn:focus {
+  color: #fff;
+  background-color: #17a2b8;
+  border-color: #17a2b8;
+}
