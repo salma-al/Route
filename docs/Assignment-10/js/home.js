@@ -7,5 +7,6 @@ console.log(localStorageName);
 sessionName.innerHTML = localStorageName;
 
 logOut.addEventListener('click', function () {
+  localStorage.removeItem('sessionName');
   window.location.href = 'index.html';
 });

@@ -21,14 +21,14 @@ function alertEmptyIndputs() {
   for (var i = 0; i < inputs.length; i++) {
     if (inputs[i].value == '') {
       emptyAlert.classList.remove('d-none');
+      successAlert.classList.add('d-none');
+      emailExistAlert.classList.add('d-none');
 
       return false;
-    } else {
-      emptyAlert.classList.add('d-none');
-
-      return true;
     }
   }
+  emptyAlert.classList.add('d-none');
+  return true;
 }
 
 function successInput() {
