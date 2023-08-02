@@ -40,7 +40,7 @@ function incorrectData() {
       userDataArr[i].password == passwordLogin.value
     ) {
       isLoginCorrect = true;
-      localStorage.setItem('sessionName', userDataArr[i].name);
+      localStorage.setItem('sessionName', JSON.stringify(userDataArr[i].name));
       break;
     }
   }

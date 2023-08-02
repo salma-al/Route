@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bookmark</title>
+    <title>Sign Up</title>
 
     <!-- css -->
     <link rel="stylesheet" href="./css/all.min.css" />
@@ -18,23 +18,35 @@
 
           <form action="">
             <input
+              oninput="validationName()"
               id="nameLogin"
               class="form-control my-3 outline-white"
               placeholder="Enter your name"
               type="text"
             />
+            <p id="nameAlert" class="text-danger d-none">
+              Name must contain at least 2 Letters
+            </p>
+
             <input
+              oninput="validationEmail()"
               id="emailLogin"
               class="form-control my-3 outline-white"
               placeholder="Enter your email"
               type="text"
             />
+            <p id="emailAlert" class="text-danger d-none">Invalid E-mail</p>
+
             <input
+              oninput="validationPassword()"
               id="passwordLogin"
               class="form-control my-3 outline-white"
               placeholder="Enter your password"
               type="password"
             />
+            <p id="passwordAlert" class="text-danger d-none">
+              Password must contain 1 number and have 4 characters
+            </p>
 
             <p id="emptyAlert" class="text-danger text-center d-none">
               All inputs is required
