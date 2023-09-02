@@ -38,7 +38,7 @@ function displayMainMeals(data) {
   for (let i = 0; i < dataLength; i++) {
     container += `
      <div class="col-md-3">
-          <div class="meal-card">
+          <div class="meal-card" onclick="singlePage('${data.meals[i].idMeal}')">
                 <img
                   src="${data.meals[i].strMealThumb}"
                   alt="meal-pic" />
@@ -50,9 +50,7 @@ function displayMainMeals(data) {
   `;
   }
 
-  //   console.log(container);
   mainMealsContainer.innerHTML = container;
-  //   console.log(data);
 }
 
 // -------- Categories Page --------
@@ -251,28 +249,45 @@ async function singlePage(id) {
 
 function displaySinglePage(data) {
   console.log(data);
-  const tags = data.meals[0].strTags.split(',');
 
   let tagsContainer = '';
+  let tags = '';
 
-  for (el of tags) {
-    tagsContainer += `<li class="alert alert-danger m-2 p-1">${el}</li>`;
+  if (data.meals[0].strTags) {
+    tags = data.meals[0].strTags.split(',');
+    for (el of tags) {
+      tagsContainer += `<li class="alert alert-danger m-2 p-1">${el}</li>`;
+    }
   }
 
-  let recipeContainer = '';
+  console.log(tags);
+
+  let recipeArr = [];
 
   for (let i = 1; i < 21; i++) {
     const ingredients = `strIngredient${i}`;
     const measures = `strMeasure${i}`;
 
     if (data.meals[0][ingredients]) {
-      recipeContainer += `${data.meals[0][measures]} ${data.meals[0][ingredients]}`;
+      recipeArr.push(
+        `${data.meals[0][measures]} ${data.meals[0][ingredients]}`
+      );
+
+      //  console.log(
+      //    `<li class="alert alert-danger m-2 p-1">${data.meals[0][measures]} ${data.meals[0][ingredients]}</li>`
+      //  );
     }
   }
 
-  const recipeIng = recipeContainer.split(',');
+  let recipeContainer = '';
 
-  console.log(recipeIng);
+  for (el of recipeArr) {
+    recipeContainer += `
+     <li class="alert alert-info m-2 p-1">${el}</li>
+     `;
+  }
+
+  console.log(recipeContainer);
 
   const container = `
      <div class="col-md-4 text-white">
@@ -291,7 +306,7 @@ function displaySinglePage(data) {
         <h3><span class="fw-bolder">Category : </span> ${data.meals[0].strCategory}</h3>
         <h3>Recipes :</h3>
         <ul class="list-unstyled d-flex g-3 flex-wrap">
-          <li class="alert alert-info m-2 p-1">1 kg Goat Meat</li>
+          ${recipeContainer}
         </ul>
 
         <h3>Tags :</h3>
