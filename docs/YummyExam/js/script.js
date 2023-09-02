@@ -53,6 +53,8 @@ function displayMainMeals(data) {
   mainMealsContainer.innerHTML = container;
 }
 
+// -------- End Main page meals --------
+
 // -------- Categories Page --------
 
 navCat.addEventListener('click', function () {
@@ -128,7 +130,7 @@ function displayCatMeal(data) {
   for (let i = 0; i < dataLength; i++) {
     container += `
      <div class="col-md-3">
-          <div class="meal-card">
+          <div class="meal-card" onclick="singlePage('${data.meals[i].idMeal}')">
                 <img
                   src="${data.meals[i].strMealThumb}"
                   alt="meal-pic" />
@@ -143,6 +145,8 @@ function displayCatMeal(data) {
   mainMealsContainer.innerHTML = container;
 }
 
+// Words Limit
+
 function truncateStringToWords(inputString) {
   const words = inputString.split(' ');
   if (words.length <= 20) {
@@ -151,6 +155,8 @@ function truncateStringToWords(inputString) {
     return words.slice(0, 20).join(' ') + '...';
   }
 }
+
+// -------- End Categories Page --------
 
 // -------- Area Page --------
 
@@ -227,9 +233,7 @@ function displayCountryMeals(data) {
   `;
   }
 
-  //   console.log(container);
   mainMealsContainer.innerHTML = container;
-  //   console.log(data);
 }
 
 async function singlePage(id) {
@@ -240,12 +244,15 @@ async function singlePage(id) {
     );
     const data = await res.json();
 
-    //     console.log(data);
     displaySinglePage(data);
   } catch (error) {
     console.log(error);
   }
 }
+
+// -------- End Area Page --------
+
+// -------- Single Page --------
 
 function displaySinglePage(data) {
   console.log(data);
@@ -272,10 +279,6 @@ function displaySinglePage(data) {
       recipeArr.push(
         `${data.meals[0][measures]} ${data.meals[0][ingredients]}`
       );
-
-      //  console.log(
-      //    `<li class="alert alert-danger m-2 p-1">${data.meals[0][measures]} ${data.meals[0][ingredients]}</li>`
-      //  );
     }
   }
 
@@ -322,3 +325,93 @@ function displaySinglePage(data) {
 
   mainMealsContainer.innerHTML = container;
 }
+
+// -------- End Single Page --------
+
+// -------- Ingredients Page --------
+
+navIng.addEventListener('click', function () {
+  $('.black-nav').animate({ width: 'toggle' }, 700);
+  ingredientsList();
+});
+
+async function ingredientsList() {
+  try {
+    const res = await fetch(
+      'https://www.themealdb.com/api/json/v1/1/list.php?i=list'
+    );
+    const data = await res.json();
+
+    console.log(data);
+    displayIngredientsList(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function displayIngredientsList(data) {
+  let container = '';
+
+  for (let i = 0; i < 20; i++) {
+    container += `
+           <div class="col-md-3">
+                <div class="meal-card d-flex flex-column justify-content-center align-items-center text-white" onclick="ingMeal('${
+                  data.meals[i].strIngredient
+                }')">
+                      <i class="fa-solid fa-drumstick-bite fa-4x"></i>
+                       <h3 class="text-center">${
+                         data.meals[i].strIngredient
+                       }</h3>
+                       <p class="text-center">${truncateStringToWords(
+                         data.meals[i].strDescription
+                       )}</p>
+                </div>
+           </div>
+        `;
+  }
+
+  //   console.log(container);
+
+  mainMealsContainer.innerHTML = container;
+}
+
+async function ingMeal(ing) {
+  //   console.log(ing);
+  try {
+    const res = await fetch(
+      `https://www.themealdb.com/api/json/v1/1/filter.php?i=${ing}`
+    );
+    const data = await res.json();
+
+    //     console.log(data);
+    displayCatMeal(data);
+  } catch (error) {
+    console.log(error);
+  }
+}
+
+function displayIngMeal(data) {
+  const dataLength = data.meals.length;
+  console.log(data);
+
+  let container = '';
+
+  for (let i = 0; i < dataLength; i++) {
+    container += `
+        <div class="col-md-3">
+             <div class="meal-card" onclick="singlePage('${data.meals[i].idMeal}')">
+                   <img
+                     src="${data.meals[i].strMealThumb}"
+                     alt="meal-pic" />
+                   <div class="layer-card">
+                     <h4>${data.meals[i].strMeal}</h4>
+                   </div>
+             </div>
+        </div>
+     `;
+  }
+
+  //   mainMealsContainer.innerHTML = container;
+}
+
+// -------- End Ingredients Page --------
