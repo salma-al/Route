@@ -11,7 +11,10 @@
     <link rel="stylesheet" href="./css/style.css" />
   </head>
   <body>
-    <div id="loading-page"></div>
+    <div id="loadingPage">
+      <span class="loader"></span>
+    </div>
+
     <div id="nav">
       <div class="black-nav">
         <div class="black-nav-content">
@@ -77,47 +80,130 @@
       </div>
     </div>
 
-    <!-- <div>
-      <div class="col-md-4">
-        <img
-          class="w-100 rounded-3"
-          src="https://www.themealdb.com/images/media/meals/cuio7s1555492979.jpg"
-          alt=""
-        />
-        <h2>Mbuzi Choma (Roasted Goat)</h2>
+    <!-- <div id="contactForm">
+      <div class="row g-4">
+        <div class="col-md-6">
+          <input
+            id="nameInput"
+            onkeyup="inputsValidation()"
+            type="text"
+            class="form-control"
+            placeholder="Enter Your Name"
+          />
+          <div id="nameAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Special characters and numbers not allowed
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input
+            id="emailInput"
+            onkeyup="inputsValidation()"
+            type="email"
+            class="form-control"
+            placeholder="Enter Your Email"
+          />
+          <div id="emailAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Email not valid *exemple@yyy.zzz
+          </div>
+          <div
+            data-lastpass-icon-root="true"
+            style="
+              position: relative !important;
+              height: 0px !important;
+              width: 0px !important;
+              float: left !important;
+            "
+          ></div>
+        </div>
+        <div class="col-md-6">
+          <input
+            id="phoneInput"
+            onkeyup="inputsValidation()"
+            type="text"
+            class="form-control"
+            placeholder="Enter Your Phone"
+          />
+          <div id="phoneAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid Phone Number
+          </div>
+        </div>
+        <div class="col-md-6">
+          <input
+            id="ageInput"
+            onkeyup="inputsValidation()"
+            type="number"
+            class="form-control"
+            placeholder="Enter Your Age"
+          />
+          <div id="ageAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid age
+          </div>
+          <div
+            data-lastpass-icon-root="true"
+            style="
+              position: relative !important;
+              height: 0px !important;
+              width: 0px !important;
+              float: left !important;
+            "
+          ></div>
+        </div>
+        <div class="col-md-6">
+          <input
+            id="passwordInput"
+            onkeyup="inputsValidation()"
+            type="password"
+            class="form-control"
+            placeholder="Enter Your Password"
+          />
+          <div id="passwordAlert" class="alert alert-danger w-100 mt-2 d-none">
+            Enter valid password *Minimum eight characters, at least one letter
+            and one number:*
+          </div>
+          <div
+            data-lastpass-icon-root="true"
+            style="
+              position: relative !important;
+              height: 0px !important;
+              width: 0px !important;
+              float: left !important;
+            "
+          ></div>
+        </div>
+        <div class="col-md-6">
+          <input
+            id="repasswordInput"
+            onkeyup="inputsValidation()"
+            type="password"
+            class="form-control"
+            placeholder="Repassword"
+          />
+          <div
+            id="repasswordAlert"
+            class="alert alert-danger w-100 mt-2 d-none"
+          >
+            Enter valid repassword
+          </div>
+          <div
+            data-lastpass-icon-root="true"
+            style="
+              position: relative !important;
+              height: 0px !important;
+              width: 0px !important;
+              float: left !important;
+            "
+          ></div>
+        </div>
       </div>
-      <div class="col-md-8">
-        <h2>Instructions</h2>
-        <p>
-          1. Steps for the Meat: Roast meat over medium heat for 50 minutes and
-          salt it as you turn it. 2. Steps for Ugali: Bring the water and salt
-          to a boil in a heavy-bottomed saucepan. Stir in the cornmeal slowly,
-          letting it fall through the fingers of your hand. 3. Reduce heat to
-          medium-low and continue stirring regularly, smashing any lumps with a
-          spoon, until the mush pulls away from the sides of the pot and becomes
-          very thick, about 10 minutes. 4.Remove from heat and allow to cool. 5.
-          Place the ugali into a large serving bowl. Wet your hands with water,
-          form a ball and serve. 6. Steps for Kachumbari: Mix the tomatoes,
-          onions, chili and coriander leaves in a bowl. 7. Serve and enjoy!
-        </p>
-        <h3><span class="fw-bolder">Area : </span>Kenyan</h3>
-        <h3><span class="fw-bolder">Category : </span>Goat</h3>
-        <h3>Recipes :</h3>
-        <ul class="list-unstyled d-flex g-3 flex-wrap">
-          <li class="alert alert-info m-2 p-1">1 kg Goat Meat</li>
-        </ul>
 
-        <h3>Tags :</h3>
-        <ul class="list-unstyled d-flex g-3 flex-wrap">
-          <li class="alert alert-danger m-2 p-1">BBQ</li>
-          <li class="alert alert-danger m-2 p-1">Meat</li>
-        </ul>
-
-        <a target="_blank" href="" class="btn btn-success">Source</a>
-        <a target="_blank" href="" class="btn btn-danger">Youtube</a>
-      </div>
+      <button
+        id="submitBtn"
+        disabled="true"
+        class="btn btn-outline-danger px-2 mt-3"
+      >
+        Submit
+      </button>
     </div> -->
-
     <script src="./js/jquery.js"></script>
     <script src="./js/bootstrap.bundle.min.js"></script>
     <script src="./js/script.js"></script>
