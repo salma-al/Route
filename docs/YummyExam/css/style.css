@@ -10,8 +10,8 @@ body {
   overflow: hidden;
 }
 
-#searchPageInputs input::placeholder {
-  color: #ffffff8f !important;
+input.form-control.bg-transparent.text-white::placeholder {
+  color: #ffffff59 !important;
 }
 
 /* --- NAVBAR --- */
@@ -158,5 +158,13 @@ body {
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+/* ----- Responsive ----- */
+
+@media (max-width: 768px) {
+  #content-area {
+    padding: 2.5em 0;
   }
 }

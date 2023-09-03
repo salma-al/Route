@@ -800,9 +800,26 @@ navContact.addEventListener('click', function () {
 function contactInputs() {
   mainMealsContainer.innerHTML = '';
 
+  //   mainMealsContainer.classList.add(
+  //     'd-flex',
+  //     'min-vh-100',
+  //     'justify-content-center',
+  //     'align-items-center'
+  //   );
+
   // Create the input field dynamically
   const contactInputContainer = document.createElement('div');
-  contactInputContainer.classList.add('row', 'w-75', 'text-center');
+  contactInputContainer.classList.add(
+    'row',
+    'w-75',
+    'text-center',
+    'd-flex',
+    'min-vh-100',
+    'align-content-center',
+    'justify-content-center',
+    'm-auto'
+  );
+
   contactInputContainer.innerHTML = `
   <div class="col-md-6">
           <input
